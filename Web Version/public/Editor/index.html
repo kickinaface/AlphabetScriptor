@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link id="theme" rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <script src="js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+    <style>
+        .navigation{
+            width: 100%;
+            border-bottom:1px solid white;
+            position: fixed;
+            background: black;
+            color: white;
+            padding:10px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>LEARN</li>
+            <li style="text-decoration: underline;">EDITOR</li>
+            <li>TYPE WRITER</li>
+        </ul>
+    </div>
+    <div class="loading">Rendering Text...</div>
+    
+    <br>
+    <br>
+    <!-- <div class="readerWrapper">Welcome to the Editor</div>
+    <div class="readerWrapper">Open the html document and follow the format of this preview passage</div>
+    <div class="readerWrapper">This is how you make blocks of text within a div item</div> 
+    use images-->
+    <!-- <div class="readerWrapper">
+        <img src="img/yinyang.png" alt="" style="width:25%">
+    </div> -->
+    <!-- <div class="readerWrapper">Be sure to group everything appropriately and to remove extra spaces at the beginning and end of divs.</div>
+    <div class="readerWrapper">For faster rendering, comment out blocks of text that you know you do not need or that are already completed. This way, you will spend less time rendering over something that has already been completed. It will load faster when you block out older chunks and gradgually build blocks together.</div>
+    <div class="readerWrapper">Remember to change the title of this page to match your printing document title</div> -->
+
+    <!-- <div class="readerWrapper">Thanks for writing!</div>
+    <div class="readerWrapper">Have fun!</div>
+    <div class="readerWrapper">With love!</div>
+    <div class="readerWrapper">NN  Chris  NN</div> --
+    Use use links-->
+    <!-- <div class="readerWrapper"><a href="/Editor/passages/noGreaterLove.html">No Greater Love</a></div>
+    <div class="readerWrapper"><a href="/Editor/passages/noWeapon.html">No Weapon</a></div> -->
+    <div class="readerWrapper">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nisi mi, eleifend sed fermentum sed, congue non ipsum. Praesent accumsan sapien ac felis laoreet, a sodales lacus feugiat. Ut vestibulum, lorem sagittis vehicula tincidunt, lectus quam fermentum lorem, ac facilisis ante dui et ex. Fusce a nunc placerat quam rhoncus convallis ac non ipsum. Quisque vitae mauris vehicula, convallis ligula vitae, pulvinar orci. Aenean ut sapien vel ipsum sagittis condimentum. Curabitur ut pharetra leo. Donec blandit ipsum ac ante molestie tincidunt.</div>
+    <div class="readerWrapper">Pellentesque porta pretium vehicula. Pellentesque ultricies lobortis est, ac fringilla felis efficitur id. Curabitur pulvinar risus at tincidunt porta. Duis lorem orci, aliquam ut tempus eu, euismod eget eros. Sed tortor nisi, consectetur id libero nec, tincidunt dictum nibh. Aliquam sit amet pretium arcu. Etiam tristique, ex vel scelerisque congue, augue tortor efficitur sapien, molestie vulputate nulla arcu sit amet lectus. Quisque nec gravida lacus, eget blandit mi. Sed in magna vitae tortor auctor volutpat. Etiam nisl orci, commodo at semper eget, molestie pellentesque ipsum. Vestibulum porttitor rhoncus neque a vehicula. Vestibulum a tortor diam. Vivamus euismod rutrum ornare. Sed nec arcu vitae sapien lacinia condimentum. Integer in cursus felis. Vestibulum eros sapien, tempus ac lacus a, volutpat varius metus.</div>
+    <div class="readerWrapper">Mauris ultrices faucibus libero. Duis quis ligula ac dui pulvinar rhoncus. In a turpis et urna semper sagittis. In eget porta odio, eu molestie nisl. Etiam tempus mattis est, eu maximus tortor maximus sed. Nunc porttitor odio vitae finibus faucibus. In convallis egestas turpis placerat gravida. Morbi efficitur ac neque vel auctor. Integer nisl purus, euismod id ex eu, rhoncus scelerisque sapien. Maecenas enim sapien, imperdiet sodales sem et, cursus fringilla orci. Praesent ultricies tincidunt orci. Donec eu aliquam ex. Nam ac ligula lacus. Mauris et consectetur nibh.</div>
+    <div class="readerWrapper">Nullam pulvinar est vel turpis ornare, vel elementum sapien dignissim. Vivamus dolor sem, viverra tincidunt lectus a, porta suscipit diam. Morbi ultricies orci purus, ut luctus nisi feugiat in. Cras porttitor dictum iaculis. Nullam volutpat consectetur aliquet. Sed porta, purus ut laoreet placerat, nisl nibh mattis sem, sed vehicula sapien turpis non est. Aenean feugiat egestas elementum. Aenean auctor est at ipsum ultrices scelerisque. Sed aliquam dolor in felis sollicitudin, a suscipit justo pellentesque. Sed euismod tellus eu sapien sagittis, id rutrum enim pharetra. In malesuada imperdiet vulputate. Morbi eu euismod urna, vitae pellentesque eros. Ut posuere nibh maximus urna ullamcorper lobortis. In egestas, purus at fringilla pretium, turpis quam aliquet ipsum, quis pretium ligula leo vitae lectus. Nullam vel eleifend velit. Sed porta tincidunt metus, sit amet finibus quam eleifend nec.</div>
+    <div class="readerWrapper">Phasellus consectetur nulla quis tellus lobortis, in bibendum lectus vulputate. Phasellus faucibus libero imperdiet, scelerisque felis ac, consectetur augue. Morbi leo ante, placerat condimentum viverra nec, fringilla et metus. Sed id odio et nulla porta dignissim. Integer maximus, erat a euismod dignissim, massa nibh gravida nunc, luctus maximus est lectus ut nunc. Cras ac dignissim arcu. Curabitur at dolor sagittis, bibendum arcu eget, convallis nisl. Quisque a gravida magna.</div>
+    <div class="translationWrapper"></div>
+
+    <div class="controls">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="textSize">
+            <label for="textSizeInputRange" style="font-size: 10pt;">Change Text Size:</label>
+            <br>
+            <input type="range" id="textSizeInputRange" min="12" max="27" value="17" onchange="updateChangeText(this.value)" oninput="updateChangeText(this.value)">
+            <span id="textSizeInput">17</span> 
+            <!-- <input type="button" value="Apply" onclick="updateFontSize();"> -->
+        </div>
+    </div>
+</body>
+<script>
+    // Controls click events
+    document.querySelector('.dark').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', 'css/dark.css');
+    });
+    document.querySelector('.light').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', 'css/light.css');
+    });
+    document.querySelector('.leftJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'left';
+    });
+    document.querySelector('.centeredText').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'center';
+    });
+    document.querySelector('.rightJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'right';
+    });
+    
+    function updateChangeText(textSizeVal){
+        document.getElementById('textSizeInput').innerHTML = textSizeVal;
+        alphabetScriptor.updateFontSize(textSizeVal);
+    }
+
+    // function updateFontSize(){
+    //     var newFontSize = document.getElementById('textSizeInput').innerHTML;
+    //     //
+    //     alphabetScriptor.updateFontSize(newFontSize);
+    // }
+
+    // Set Default text alignment and styles
+    //document.querySelector('.centeredText').click();
+    document.querySelector('.dark').click();
+    alphabetScriptor.imageWidth = 17;
+    alphabetScriptor.fontType = 'default';
+</script>
+</html>

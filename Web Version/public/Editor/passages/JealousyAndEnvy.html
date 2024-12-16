@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jealousy & Envy </title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link id="theme" rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+    <script>
+        alphabetScriptor.pathEdit = '../';
+    </script>
+</head>
+<body>
+    <div class="loading">Rendering Text...</div>
+    <br>
+    <div class="readerWrapper">Jealousy and Envy</div>
+    <div class="readerWrapper">A person who shows improper jealousy suspects others without adequate cause of resents the diversion to another of what he unjustifiably claims as his own. An envious person discontentedly desires or covets the good fortune and attainments of others. The context often determines the sense in which the Hebrew words usually translated jealous or jealousy but the Greek language also has a separate word, phthonos for envy.
+    </div>
+
+    <div class="readerWrapper">In the Corinthian congregation of the first century ambitious men had come in, calling attention to themselves, boasting in men and were bringing about strife in the congregation. The congregation was split into factions jealousy looking to exalting and following men. Paul pointed out that such jealousy was fleshly not spiritual.
+    </div>
+    <div class="readerWrapper">First Corinthians three N three</div>
+    <div class="readerWrapper">Second Corinthians twelve N twenty</div>
+
+    <div class="readerWrapper">He explained that godly love is not jealous in an improper way, but rather, is trusting and hopeful, always acting in the interests of others.</div>
+    <div class="readerWrapper">First Corinthians thirteen N four, five, seven.</div> 
+    <div class="readerWrapper">Jealousy of the kind that Paul spoke against in the Corintian congregation is not righteous. It is not in behalf of exclusive devotion to Jehovah. Rather, it is a form of idolatry, demonic in origin, and it breeds envy and strife. The Bible repeatedly warns against it, showing that it affects the heart itself. Jesus' half-brother James wrote N If you have bitter jealousy and contentiousness in your hearts, do not be bragging and lying against the truth. This is not the wisdom that comes down from above, but is the earthly, animal, demonic. For where jealousy and contentiousness are, there disorder and every vile thing are N</div>
+    <div class="readerWrapper">James three N fourteen nn sixteen</div>
+    <div class="readerWrapper">Romans thirteen N thirteen</div>
+    <div class="readerWrapper">Galations five N nineteen nn twenty one</div>
+    <div class="readerWrapper">Jealousy of the wrong kind has a detrimental effect on ones physical health</div>
+    <div class="readerWrapper">For a calm heart is the life of the fleshly organism, but jealousy is rotten to the bones.</div>
+    <div class="readerWrapper">Proverbs fourteen N thirty</div>
+    <div class="readerWrapper">This text, as well as James words in the foregoing paragraph, indicates that jealousy is a quality not merely of the mind, but of the heart. It can be more destructive than rage or anger because it may be more deep rooted more lasting and persistent and less easily assuaged. Usually reason is thrown to the winds.</div>
+    <div class="readerWrapper">Proverbs twenty seven N four</div>
+    <div class="readerWrapper">Even the jealousy of a man who is righteously enraged toward another who commits adultry with his wife will not accept any sort of excuse or ransom.</div>
+    <div class="readerWrapper">Proverbs six N thirty two nn thirty five.</div>
+    <div class="readerWrapper">The wrong kind of jealousy can bring a person to a point where he sins against God, as did the ten half brothers of Joseph.</div>
+    <div class="readerWrapper">Genesis thirty seven N eleven</div>
+    <div class="readerWrapper">Acts seven N nine</div>
+    <div class="readerWrapper">It can lead to loss of life for an individual and others involved, as it did in the case of Dathan Abiram and members of their households.</div>
+    <div class="readerWrapper">Psalm One O six N sixteen seventeen</div>
+    <div class="readerWrapper">Worse yet, jealousy prompted unbelieving Jews to commit serious crimes toward the apostles and, in addition, blasphemy and attempted murder.</div>
+    <div class="readerWrapper">Acts thirteen N forty five, fifty</div>
+    <div class="readerWrapper">Acts fourteen N nineteen</div>
+
+    <div class="translationWrapper"></div>
+
+    <div class="controls">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="textSize">
+            <label for="textSizeInputRange" style="font-size: 10pt;">Change Text Size:</label>
+            <br>
+            <input type="range" id="textSizeInputRange" min="25" max="160" value="50" onchange="updateChangeText(this.value)" oninput="updateChangeText(this.value)">
+            <span id="textSizeInput">50</span> 
+            <input type="button" value="Apply" onclick="updateFontSize();">
+        </div>
+    </div>
+</body>
+<script>
+    // Controls click events
+    document.querySelector('.dark').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/dark.css');
+    });
+    document.querySelector('.light').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/light.css');
+    });
+    document.querySelector('.leftJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'left';
+    });
+    document.querySelector('.centeredText').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'center';
+    });
+    document.querySelector('.rightJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'right';
+    });
+
+    function updateChangeText(textSizeVal){
+        document.getElementById('textSizeInput').innerHTML = textSizeVal;
+        //alphabetScriptor.updateFontSize(textSizeVal);
+    }
+
+    function updateFontSize(){
+        var newFontSize = document.getElementById('textSizeInput').innerHTML;
+        //
+        alphabetScriptor.updateFontSize(newFontSize);
+    }
+    // Set Default text alignment and styles
+    // document.querySelector('.centeredText').click();
+    // document.querySelector('.dark').click();
+    // alphabetScriptor.imageWidth = 17;
+    // alphabetScriptor.fontType = 'default';
+</script>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Alphabet-Scriptor - LEARN</title>
+    
+    <link rel="stylesheet" href="/css/main.css">
+    <link id="theme" rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <script src="Editor/js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>
+        alphabetScriptor.pathEdit = 'Editor/';
+    </script>
+</head>
+<body>
+    <div class="mobileOnlyMessage"><h1>Made For Desktop View Not Mobile View</h1><h4>It is encouraged to view written material on a desktop or laptop screen.</h4></div>
+    <div class="navigation">
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li style="text-decoration: underline;">LEARN</li>
+            <li>EDITOR</li>
+            <li>TYPE WRITER</li>
+        </ul>
+        <div class="shelfControl"></div>
+    </div>
+    <!-- Shelf -->
+    <div class="navigationShelf">
+        <ul class="navList">
+            <li><h2>Alphabet</h2>
+                 <ul style="margin-left:20px;">
+                     <li><h3>Font Formats:</h3>
+                        <ul style="margin-left:20px;">
+                            <li>Traditional</li>
+                            <li>Default</li>
+                        </ul>
+                    </li>
+                     
+                 </ul>
+            </li>
+            <li><h2>Download</h2>
+                 <ul style="margin-left:20px;">
+                     <li><h3>Download .zip file</h3></li>
+                 </ul>
+            </li>
+            <li><h2>Application Setup</h2>
+                <ul style="margin-left:20px;">
+                    <li><h3>Run the App</h3></li>
+                </ul>
+            </li>
+            <li><h2>How To: Editor</h2>
+                <ul style="margin-left:20px;">
+                    <li><h3>Change "index.html"</h3></li>
+                    <li><h3>Editor's Features</h3>
+                        <ul style="margin-left:20px;">
+                            <li>Reading Modes</li>
+                            <li>Text Alignment</li>
+                            <li>Text Size</li>
+                            <li>Font Formats</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><h2>How To: Type Writer</h2>
+                <ul style="margin-left:20px;">
+                    <li><h3>Controls</h3>
+                        <ul style="margin-left:20px;">
+                            <li>Dark/Light</li>
+                            <li>Text Alignment</li>
+                            <li>Add Page</li>
+                            <li>Remove Page</li>
+                            <li>Save Page</li>
+                            <li>Export Workspace</li>
+                            <li>Import Workspace</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><h2>Thank You!</h2>
+                <ul style="margin-left:20px;">
+                    <li><h3>More coming updates!</h3></li>
+                </ul>
+            </li>
+         </ul>
+    </div>
+    <br>
+    <div class="mainContent">
+        <h1>ALPHABET: </h1>
+        <div class="subContentWrapper">
+            <img class="alphabetImage" src="/img/alphabet.png" alt="" />
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="FontFormats">
+                <h2>Font Formats</h2>
+                <br>
+                <span>There are two formats of the script.</span>
+                <br>
+                <br>
+                <h3>Traditional:</h3> 
+                <br>
+                <img src="/img/traditional-1.png" alt="">
+                <br>
+                <br>
+                <br>
+                *A line format that is the first creation of this alphabet. This adaptation produces an effect that allows the learner to engage deeply with their intentions.
+                <br>
+                <br>
+                <h3>Print/block default:</h3>
+                <br>
+                <img src="/img/block-print-1.png" alt="">
+                <br>
+                <br>
+                *A block print format that removes the line and renders the alphabet characters only. This method is quick powerful and the first to be programmed.
+                <br>
+                <br>
+                <br>
+                *The picture in the top heading title above is the alphabet of this script and should be learned and memorized just as the learner understands the current alphabet.
+                <br>
+                <br>
+                This is to ensure the content is absorbed into the sub-conscious mind.
+                <br>
+                <br>
+                The ability to both read and write in this script or any script is imparitive before proceeding to computational typing or automated tools.
+                <br>
+                <br>
+                The traditional way of learning is the best way. In this particular case it is in alignment with previous writing styles that have already been acquired.
+                <br>
+                <br>
+                Once you are able to learn the script and read and write with it without reference material you are ready to express with it and truly embrace this tool as well.
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="Download">
+                <h2>Download Alphabet-Scriptor</h2>
+                <a href="/download">Click Here</a> to download a .zip file of the application. Please follow the documentation on how to install it on your system. This is a NodeJS application and it will be used via the browser.
+                <br>
+                You do not have to download in order to use this application. Although you must download if you wish to use the "Editor" program for your own purposes. Please continue reading more for setup.
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="ApplicationSetup">
+                <h2>Application Setup</h2>
+                After you have downloaded the .ZIP file and extracted it to your prefered location. You must have NodeJS installed on your machine.
+                <p>Head <a href="http://nodejs.org" target="_blank">over here</a> to install it.</p>
+                <br>
+                <h3>Run the App</h3>
+                Open up an instance of terminal or command line to run the NodeJS command. Make sure you have pointed the instance to the proper location of the application.
+                <br>
+                <br>
+                Run: "npm install" to install the dependencies at first.
+                <br>
+                <img src="/img/npminstall.png" alt="">
+                <br>
+                <br>
+                Then run: "node main" to start the program
+                <br>
+                <img src="/img/nodemain.png" alt="">
+                <br>
+                <br>
+                <br>
+                <br>
+                Head to your browser and type: "http://localhost:7000" into the url to visit the web application.
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="HowToEditor">
+                <h2>How to Use the Editor</h2>
+                Follow these instructions on how to use the Editor program.
+                <br>
+                <br>
+                When you know how to edit files and run the application, you can create specific pages or "passages" that are formatted to your liking.
+                <br>
+                <br>
+                Use cases of the Editor are for: longer size documents, web or content developers and the creation of pages that can be visited by themselves locally or on a server.
+                <br>
+                <br>
+                <h3>Change "index.html"</h3>
+                <br>
+                Once you have downloaded the application and you have it running locally, visit the: "Editor" program in the navigation or by visiting "/Editor" after your root url.
+                <br>
+                <br>
+                You will see the what is being loaded inside the index.html file within the "Editor" folder.
+                <br>
+                In your code editor of choice, locate and open the "index.html" file to make changes to it.
+                <br>
+                <br>
+                <img src="/img/indexFile.png" alt="">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+                Begin making changes to the code. Everything will render that is kept inside a ".readerWrapper" class.
+                <br>
+                Try changing or removing some of the classes that hold the textual content.
+                <br>
+                Be sure to keep the ".translationWrapper" class. It is needed to render the new text by the Editor program.
+                <br>
+                You can un-comment out the image to see how images are added in. Follow this format to "edit" and create documents of your own.
+                <br>
+                <br>
+                
+                <img src="/img/changeIndexCode-1.png" alt="">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                Once you have "index.html" to your liking, try adding some basic features to it like: Dark or Light, text alignment, and font size.
+                <br>
+                You can change this in the UI
+                or you can follow the code to program it in the controls so that they load up with your document's first launch.
+                <br>
+                <br>
+                <h3>Editor's Features</h3>
+                At the moment, there are 4 major features of Editor. More to come soon! Please follow along to take advantage of these features.
+                <br>
+                <br>
+                <img src="/img/controls.png" alt="">
+                <br>
+                <br>
+                <br>
+                <h4>Reading Modes:</h4>
+                As of right now, there are two reading modes: Dark and Light, click the two to toggle between them. 
+                <br>  
+                It is said that dark backgrounds are best for reading while white background is best for printing.
+                <br>
+                <br>
+                <h4>Text Alignment:</h4>
+                You can align the text to the left, center, or right or the screen.
+                <br>
+                <br>
+                <h4>Text Size:</h4>
+                Change the text size of your document 
+                <br>
+                <br>
+                <h4>Font Formats:</h4>
+                As of right now, you can change the font formats programmaticallly. Later, there where will be UI controls to toggle font formats.
+                <br>
+                <br>
+                <img src="/img/programmedControls.png" alt="">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                *Take a look at the code for customizing the controls.
+                <br>
+                This is telling the page the be: "centered"
+                <br>
+                The Rendering Mode to be: "Dark"
+                <br>
+                The image width or size of the image: "17"
+                <br>
+                And lastly the font type or format which is: "default" also known as print or block form.
+                <br>
+                These settings were set so that the document loads with these values on page refresh without having to click on the UI controls.
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="HowToTypeWriter">
+                <h2>How to Use the Type Writer</h2>
+                Follow these instructions on how to use the Type Writer.
+                <br>
+                <br>
+                I like to use Type Writer for short but powerful proverbs that I usually make dead centered and maybe with a black background.
+                <br>
+                Later, I like to print off each page individually or use screen shots of the text in Type Writer and then transfer the cropped
+                <br>
+                image onto something that I wish to print or work with later. I have specifically done this with gifts and also with events journals.
+                <br>
+                Its fun to see your affirmations printed out and placed onto things.
+                <br>
+                <br>
+                <h3>Controls:</h3>
+                <br>
+                <img src="/img/programmedControls2.png" alt="">
+                <br>
+                <br>
+                <h4>Change Dark/Light</h4>
+                <h4>Change Text Alignment</h4>
+                <br>
+                <h4>Add Page</h4>
+                Click "Add (+)" to create a new page on the right panel.
+                <br>
+                Navigate to the new page on the control bar.
+                <br>
+                Add your new page content.
+                <br>
+                Remember to Save your content into memory.
+                <br>
+                <br>
+                <h4>Remove Page</h4>
+                Click "Remove (-)" to remove a page. Be sure you are on the present page you wish to remove.
+                <br>
+                <br>
+                <h4>Save Page</h4>
+                Click "Save" to hold the content in memory for each page.
+                <br>
+                <br>
+                <h4>Export Workspace</h4>
+                Click "Export" to export the current workspace. This includes the pages and their content. They will be exported as a ".json" document.
+                <br>
+                You can download this file and use it for later to be imported or just to save your work.
+                <br>
+                <br>
+                <h4>Import Workspace</h4>
+                Click "Import" to bring up the dialog box. Then, select the .json file which you have exported earlier.
+                <br> 
+                <i>Alphabet-Scriptor will not recognize any other format than  the .json document that was exported previously.</i>
+                <br>
+                <br>
+                <img src="/img/importWorkspace.png" alt="">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                Select "Import" button on the dialog to replace the current workspace with the imported one.
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="ThankYou">
+                <h2>Thank you!</h2>
+                <br>
+                <span>Thanks for reading and learning more about Alphabet-Scriptor! Im always thinking of new things to add and update constantly.
+                    <br>I have many updates I wish to release. Keep checking back for updates to the applicaion.
+                </span>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </div>
+        
+    </div>
+    <!-- <div class="loading">Rendering Text...</div> -->
+    <!-- <div class="nineEyesWrapper">
+        <img src="img/9-eyes.jpg" alt="">
+    </div> -->
+   
+    
+    <br>
+    <br>
+    <br>
+</body>
+</html>

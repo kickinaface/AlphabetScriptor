@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faith </title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link id="theme" rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+    <script>
+        alphabetScriptor.pathEdit = '../';
+    </script>
+</head>
+<body>
+    <div class="loading">Rendering Text...</div>
+    <div class="readerWrapper">Faith in context to religion</div>
+    <div class="readerWrapper">Faith in Buddhism</div>
+    <div class="readerWrapper">Faith in Buddhism refers to a serene commitment in the practice of the Buddhas teaching and trust in enlightened or highly developed beings, such as Buddhas or bodhisattvas</div>
+    <div class="readerWrapper">those aiming to become a Buddha</div>
+    <div class="readerWrapper">Buddhists usually recognize multiple objects of faith, but many are especially devoted to one particular object of faith, such as one particular Buddha.</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Faith in Christianity</div>
+    <div class="readerWrapper">Now faith is the substance of things hoped for, the evidence of things unseen. For by it the elders obtained a good testimony. By faith we understand that the worlds were framed by the word of God, so that the things which are seen were not made of things which are visible.</div>
+    <div class="readerWrapper">Hebrews Eleven N One nn three</div>
+    <div class="readerWrapper">We walk by faith not by sight.</div>
+    <div class="readerWrapper">Second Corinthians Five N seven</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Faith in Hinduism</div>
+    <div class="readerWrapper">Bhakti litterally means attachment, participation, fondness for, homage, faith, love, devotion, worship, purity</div>
+    <div class="readerWrapper">It was originally used in Hinduism, referring to devotion and love for a personal god or a representational god by a devotee.</div>
+    <div class="readerWrapper">In ancient texts such as the Shvetashvatara Upanishad, the term simply means participation, devotion and love for any endeavor, while in the Bhagavad Gita, it connotes one of the possible paths of spirituality and towards moksha, as in bhakti marga.</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Faith in Islam</div>
+    <div class="readerWrapper">In Islam, a believer's faith in the metaphysical aspects of Islam is called Iman</div>
+    <div class="readerWrapper">which is complete submission to the will of God, not unquestionable or blind belief.</div>
+    <div class="readerWrapper">A man must build his faith on well-grounded convictions beyond any reasonable doubt and above uncertainty.</div>
+    <div class="readerWrapper">According to the Quran, Iman must be accompanied by righteous deeds and the two together are necessary for entry into Paradise.</div>
+    <div class="readerWrapper">In the Hadith of Gabriel, Iman in addition to Islam and Ihsan form the three dimensions of the Islamic religion</div>
+
+    <div class="translationWrapper"></div>
+
+    <div class="controls">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="textSize">
+            <label for="textSizeInputRange" style="font-size: 10pt;">Change Text Size:</label>
+            <br>
+            <input type="range" id="textSizeInputRange" min="12" max="27" value="17" onchange="updateChangeText(this.value)" oninput="updateChangeText(this.value)">
+            <span id="textSizeInput">17</span> 
+            <!-- <input type="button" value="Apply" onclick="updateFontSize();"> -->
+        </div>
+    </div>
+</body>
+<script>
+    // Controls click events
+    document.querySelector('.dark').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/dark.css');
+    });
+    document.querySelector('.light').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/light.css');
+    });
+    document.querySelector('.leftJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'left';
+    });
+    document.querySelector('.centeredText').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'center';
+    });
+    document.querySelector('.rightJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'right';
+    });
+    
+    function updateChangeText(textSizeVal){
+        document.getElementById('textSizeInput').innerHTML = textSizeVal;
+        alphabetScriptor.updateFontSize(textSizeVal);
+    }
+
+    // function updateFontSize(){
+    //     var newFontSize = document.getElementById('textSizeInput').innerHTML;
+    //     //
+    //     alphabetScriptor.updateFontSize(newFontSize);
+    // }
+
+    // Set Default text alignment and styles
+    //document.querySelector('.centeredText').click();
+    document.querySelector('.dark').click();
+    alphabetScriptor.imageWidth = 17;
+    alphabetScriptor.fontType = 'default';
+</script>
+</html>

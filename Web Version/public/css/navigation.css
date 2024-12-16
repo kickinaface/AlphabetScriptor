@@ -1,0 +1,48 @@
+.navigation ul{
+    list-style: none;
+}
+.navigation ul li{
+    float: left;
+    padding-right: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9pt;
+}
+.navigation ul li:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navigationShelf {
+    position: fixed;
+    padding-right:20px;
+    padding-bottom:15px;
+    border-left: 1px solid white;
+    border-bottom:1px solid white;
+    background: black;
+    color: white;
+    right:0;
+    top:36px;
+    z-index: 1;
+    list-style: square;
+    display: block;
+}
+.navList{
+    margin-top:15px;
+    margin-left:35px;
+}
+.navList h2:hover, .navList ul li ul li:hover, .navList h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.shelfControl{
+    float: right;
+    width: 30px;
+    height: 10px;
+    border: 2px solid white;
+    margin-right:20px;
+    background-color: white;
+    cursor: pointer;
+}

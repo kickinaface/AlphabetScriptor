@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dantian </title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link id="theme" rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+    <script>
+        alphabetScriptor.pathEdit = '../';
+    </script>
+</head>
+<body>
+    <div class="loading">Rendering Text...</div>
+    <br>
+    <div class="readerWrapper">Dan Tian</div>
+    <div class="readerWrapper">
+        <img src="../img/yinyang.png" style="width:25%" alt="">
+    </div>
+    <div class="readerWrapper">Dan Tian is loosely translated as</div>
+    <div class="readerWrapper">elixir field</div>
+    <div class="readerWrapper">sea of qi</div>
+    <div class="readerWrapper">or simply energy center</div>
+    <div class="readerWrapper">Dantian are the qi focus flow centers, important focal points for meditative and exercise techniques such as qigong, martial arts such as tai chi chu, uan and in traditional Chinese medicine.</div>
+    <div class="readerWrapper">Historically the first detailed description of the lower Dantian is in the Laozi zhongjing from the 3rd century CE, it refers to the elixir-of-life field where "essence" and "spirit" are stored, it is related to regeneration and sexual energy, menstruation and semen. Traditionally, a dantian is considered to be a center of qi or life force energy. The dantian are important points of reference in neidan, qigong, neigong, tao yin, Taoist sexual practices, reiki and other self-cultivation practices of exercise, breathing, and meditation, as well as in martial arts and in traditional Chinese medicine. The lower dantian is particularly important as the focal point of breathing technique as well as the centre of balance and gravity. Dantian are focal points for transmutation of the three treasures jing, qi and shen.</div>
+    <div class="readerWrapper">Qi can be seen as a substance when it is stored in the form of Essence or jing, this can be refined by heating in these cauldrons into more rarefied states such as qi which is insubstantial and further still into shen which is more like the Western concept of mind although it is more often translated as "spirit".</div>
+    <div class="readerWrapper">Taoist and Buddhist teachers often instruct their students to centre the mind in the navel or lower dantian. This is believed to aid control of thoughts and emotions. Acting from the dantian is considered to be related to higher states of awareness or samadhi.</div>
+    <div class="readerWrapper">The Taoist concept of dantian as energy centers is similar to the Indian yoga concept of chakras as key points where prana is stored (see also nadi). The major difference, however, is that Taoist dantian are the major energetic storage mechanisms whereas the yogic chakras are not so much storage centers, but energetic vortices which act as intake and output ports. Many traditions consider the dantian and the chakras to be separate, albeit cooperative energetic mechanisms.</div>
+    <div class="readerWrapper">Different schools of thought categorize dantian in various manners. Three main dantian are typically emphasized</div>
+    <div class="readerWrapper">Lower Dantien</div>
+    <div class="readerWrapper">Xia Dantian</div>
+    <div class="readerWrapper">at the crossing of the horizontal line behind the Ren-6 acupoint and vertical line above the perinium, which is also called "the golden stove"</div>
+    <div class="readerWrapper">Jin lu</div>
+    <div class="readerWrapper">or the namesake elixir-of-life field proper, where the process of developing the elixir by refining and purifying essence jing into vitality qi begins.</div>
+    <div class="readerWrapper">Middle Dantien</div>
+    <div class="readerWrapper">Zhong Dantian</div>
+    <div class="readerWrapper">at the level of the heart, which is also called the crimson palace, associated with storing spirit (shen) and with respiration and health of the internal organs, in particular the thymus gland. This cauldron is where vitality or qi is refined into shen or spirit.</div>
+    <div class="readerWrapper">Upper Dantian Shang Dantian</div>
+    <div class="readerWrapper">Shang Dantian</div>
+    <div class="readerWrapper">at the forehead between the eyebrows or third eye, which is also called the muddy pellet, associated with the pineal gland. This cauldron is where shen or spirit is transmuted into wu wei or emptiness.</div>
+    <div class="readerWrapper">The term dantian used by itself usually refers to the lower dantian, which is considered to be the foundation of rooted standing, breathing, and body awareness in qigong, Chinese martial arts, and other martial arts. The lower dantian has been described to be like the root of the tree of life.</div>
+    <div class="readerWrapper">In speaking of the lower of the three energy centers, the term dantian is often used interchangeably with the Japanese word hara Chinese fu which means simply belly. In Chinese, Korean, and Japanese traditions, it is considered the physical center of gravity of the human body and is the seat of ones internal energy qi. A master of calligraphy, swordsmanship, tea ceremony, martial arts, among other arts, is held in the Japanese tradition to be acting from the hara.</div>
+    <div class="readerWrapper">The lower dantian corresponds to the yoga concept of the swadhisthana chakra. In yoga philosophy, it is thought to be the seat of prana that radiates outwards to the entire body.</div>
+    <div class="readerWrapper">NN WikiPedia NN</div>
+
+    <div class="translationWrapper"></div>
+
+    <div class="controls">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="textSize">
+            <label for="textSizeInputRange" style="font-size: 10pt;">Change Text Size:</label>
+            <br>
+            <input type="range" id="textSizeInputRange" min="25" max="160" value="50" onchange="updateChangeText(this.value)" oninput="updateChangeText(this.value)">
+            <span id="textSizeInput">50</span> 
+            <input type="button" value="Apply" onclick="updateFontSize();">
+        </div>
+    </div>
+</body>
+<script>
+    // Controls click events
+    document.querySelector('.dark').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/dark.css');
+    });
+    document.querySelector('.light').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/light.css');
+    });
+    document.querySelector('.leftJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'left';
+    });
+    document.querySelector('.centeredText').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'center';
+    });
+    document.querySelector('.rightJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'right';
+    });
+
+    function updateChangeText(textSizeVal){
+        document.getElementById('textSizeInput').innerHTML = textSizeVal;
+        //alphabetScriptor.updateFontSize(textSizeVal);
+    }
+
+    function updateFontSize(){
+        var newFontSize = document.getElementById('textSizeInput').innerHTML;
+        //
+        alphabetScriptor.updateFontSize(newFontSize);
+    }
+
+    // Set Default text alignment and styles
+    document.querySelector('.centeredText').click();
+    document.querySelector('.dark').click();
+    alphabetScriptor.imageWidth = 50;
+    alphabetScriptor.fontType = 'traditional';
+</script>
+</html>

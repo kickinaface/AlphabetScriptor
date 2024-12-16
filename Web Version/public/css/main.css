@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: black;
+}
+.readerWrapper{
+    display: none;
+}
+
+.translationWrapper{
+    padding:20px;
+    text-align: center;/* text-align: right; */
+    background:black;
+}
+.translationWrapper img{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+.loading{
+    margin-top:0px 10px 0px 10px;
+    background: black;
+    position: fixed;
+    color:white;
+    width:100%;
+    text-align: center;
+    padding:5px 0px 5px 0px;
+    font-weight: bold;
+}
+.editorText{
+    position: absolute;
+    height: 55px;
+    width: 300px;
+    /* background: red; */
+}
+.programs, .passages{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+.controls{
+    position: fixed;
+    bottom:0;
+}
+.dark{
+    color:white;
+    background: black;
+    float: left;
+    padding:10px;
+    cursor: pointer;
+}
+.light{
+    color:black;
+    background:white;
+    float: left;
+    padding:10px;
+    cursor: pointer;
+}
+
+.nineEyesWrapper{
+    width: 100%;
+    text-align: center;
+}
+.nineEyesWrapper img{
+    margin: 0 auto;
+    margin-top:50px;
+    width: 300px;
+}
+
+.navigation{
+    width: 100%;
+    border-bottom:1px solid white;
+    position: fixed;
+    background: black;
+    color: white;
+    padding:10px;
+    z-index: 1;
+}
+
+.mainContent{
+    padding:30px 10px 10px 10px;
+    color:white;
+    font-size: 14pt;
+}
+
+.subContentWrapper img{
+    float: left;
+}
+
+.alphabetImage{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.subContentWrapper a{
+    color: #ccc;
+}
+.subContentWrapper a:hover{
+    color:white;
+}
+/* .mobileOnlyMessage{
+    position: absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    display:none;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color:white;
+    text-align: center;
+} */
+
+/* @media screen and (max-width: 600px) {
+    .mobileOnlyMessage{
+        display: block;
+    }
+    .navigation{
+        display: none;
+    }
+    .passages{
+        display: none;
+    }
+} */

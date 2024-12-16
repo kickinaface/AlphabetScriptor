@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Laws of Tehuti </title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link id="theme" rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+    <script>
+        alphabetScriptor.pathEdit = '../';
+    </script>
+</head>
+<body>
+    <div class="loading">Rendering Text...</div>
+    <br>
+    <div class="readerWrapper">The Seven Laws of Tehuti</div>
+    <div class="readerWrapper">
+        <img src="../img/tehuti1.jpeg" alt="">
+    </div>
+    <div class="readerWrapper">
+        <img src="../img/tehuti3.png" alt="">
+        <img src="../img/tehuti2.jpg" alt="">
+    </div>
+
+    <div class="readerWrapper">NN One NN</div>
+    <div class="readerWrapper">Mentalism</div>
+    <div class="readerWrapper">All is Mind.</div>
+    <div class="readerWrapper">The Universe is Mental.</div>
+
+    <div class="readerWrapper">NN Two NN</div>
+    <div class="readerWrapper">Correspondence</div>
+    <div class="readerWrapper">As above, so below.</div>
+    <div class="readerWrapper">As within, so without.</div>
+
+    <div class="readerWrapper">NN Three NN</div>
+    <div class="readerWrapper">Vibration</div>
+    <div class="readerWrapper">Nothing rests.</div>
+    <div class="readerWrapper">Everything moves.</div>
+    <div class="readerWrapper">Everything vibrates.</div>
+
+    <div class="readerWrapper">NN Four NN</div>
+    <div class="readerWrapper">Polarity</div>
+    <div class="readerWrapper">Everything is Dual.</div>
+    <div class="readerWrapper">Everything has Poles.</div>
+    <div class="readerWrapper">Everything has its pair of opposites.</div>
+    <div class="readerWrapper">Like and alike are the same.</div>
+
+    <div class="readerWrapper">NN Five NN</div>
+    <div class="readerWrapper">Rhythm</div>
+    <div class="readerWrapper">Everything flows;</div>
+    <div class="readerWrapper">out and in.</div>
+    <div class="readerWrapper">Everything has its tides.</div>
+    <div class="readerWrapper">All things rise and fall.</div>
+
+    <div class="readerWrapper">NN Six NN</div>
+    <div class="readerWrapper">Cause and Effect</div>
+    <div class="readerWrapper">Every cause has its effect.</div>
+    <div class="readerWrapper">Every effect has its cause.</div>
+
+    <div class="readerWrapper">NN Seven NN</div>
+    <div class="readerWrapper">Gender</div>
+    <div class="readerWrapper">Gender is in everything</div>
+    <div class="readerWrapper">Everything has its masculine and feminine principles.</div>
+    <div class="readerWrapper">Gender manifests on all planes.</div>
+
+    <div class="translationWrapper"></div>
+
+    <div class="controls">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="textSize">
+            <label for="textSizeInputRange" style="font-size: 10pt;">Change Text Size:</label>
+            <br>
+            <input type="range" id="textSizeInputRange" min="25" max="160" value="50" onchange="updateChangeText(this.value)" oninput="updateChangeText(this.value)">
+            <span id="textSizeInput">50</span> 
+            <!-- <input type="button" value="Apply" onclick="updateFontSize();"> -->
+        </div>
+    </div>
+</body>
+<script>
+    // Controls click events
+    document.querySelector('.dark').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/dark.css');
+    });
+    document.querySelector('.light').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/light.css');
+    });
+    document.querySelector('.leftJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'left';
+    });
+    document.querySelector('.centeredText').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'center';
+    });
+    document.querySelector('.rightJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'right';
+    });
+    
+    function updateChangeText(textSizeVal){
+        document.getElementById('textSizeInput').innerHTML = textSizeVal;
+        alphabetScriptor.updateFontSize(textSizeVal);
+    }
+
+    // function updateFontSize(){
+    //     var newFontSize = document.getElementById('textSizeInput').innerHTML;
+    //     //
+    //     alphabetScriptor.updateFontSize(newFontSize);
+    // }
+
+    // Set Default text alignment and styles
+    document.querySelector('.centeredText').click();
+    // document.querySelector('.dark').click();
+    alphabetScriptor.imageWidth = 50;
+    alphabetScriptor.fontType = 'traditional';
+</script>
+</html>

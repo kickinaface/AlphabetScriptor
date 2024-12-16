@@ -1,0 +1,29 @@
+body{
+    background:white;
+}
+.translatedTextWrapper{
+    background: white;
+}
+.translatedTextWrapper img{
+    -webkit-filter: invert(0);
+    filter: invert(0);
+}
+.leftJustified, .centeredText, .rightJustified{
+    color:black;
+}
+
+.loading{
+    background: black;
+    color:white;
+}
+.controls{
+    background:white;
+}
+
+.newPage{
+    color:black;
+}
+
+.exportButton, .exportButton{
+    color:black;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link id="theme" rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+    <script>
+        alphabetScriptor.pathEdit = '../';
+    </script>
+</head>
+<body>
+    <div class="loading">Rendering Text...</div>
+    <br>
+    <div class="readerWrapper">No weapon formed against me shall prosper</div>
+    <div class="readerWrapper">It won't work</div>
+    <div class="readerWrapper">No weapon formed against me shall prosper</div>
+    <div class="readerWrapper">It won't work</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Say no weapon formed against me shall prosper</div>
+    <div class="readerWrapper">It won't work</div>
+    <div class="readerWrapper">Say no weapon formed against me shall prosper</div>
+    <div class="readerWrapper">It won't work</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Say, God will do what he said he will do</div>
+    <div class="readerWrapper">He will stand by his word and he will come through (yeah)</div>
+    <div class="readerWrapper">God will do what he said he will do</div>
+    <div class="readerWrapper">He will stand by his word and he will come through</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">No weapon formed against me shall prosper</div>
+    <div class="readerWrapper">It won't work</div>
+    <div class="readerWrapper">No weapon formed against me shall prosper</div>
+    <div class="readerWrapper">It won't work</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">God will do what he said he will do</div>
+    <div class="readerWrapper">He's not a man that he should lie (stand by his word) he will come through</div>
+    <div class="readerWrapper">Say, God will do what he said he will do</div>
+    <div class="readerWrapper">He will stand by his word and he will come through</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Oh, I won't be afraid of the arrow by day</div>
+    <div class="readerWrapper">From the hand of my enemy</div>
+    <div class="readerWrapper">I can stand my ground with the Lord on my side</div>
+    <div class="readerWrapper">For the snares they have set will not succeed</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">No weapon formed against me shall prosper (No way)</div>
+    <div class="readerWrapper">It won't work (And it won't work)</div>
+    <div class="readerWrapper">No weapon formed against me (shall prosper) shall prosper (And no way, no way)</div>
+    <div class="readerWrapper">It won't work</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">For I know God would do what he says he's gonna do (Said he would do it, said he would do it)</div>
+    <div class="readerWrapper">He would stand by his word (Stand by his word)</div>
+    <div class="readerWrapper">He will come through, yeah</div>
+    <div class="readerWrapper">God would do what he says he's gonna do (Said he would do it, said he would do it)</div>
+    <div class="readerWrapper">Stand by his word, by his word (Stand by his word)</div>
+    <div class="readerWrapper">No (No), No (No way)</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">No weapon formed against me (shall prosper) shall prosper (And no way, no way)</div>
+    <div class="readerWrapper">It won't work</div>
+    <div class="readerWrapper">Tell me, no weapon formed against me (shall) shall prosper</div>
+    <div class="readerWrapper">It won't work (It won't work)</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Don't be afraid of the evils or the snares of my enemies, if you believe it say Ouu</div>
+    <div class="readerWrapper">(Ouu, ouu, ouu, ouu, ouu, ouu)</div>
+    <div class="readerWrapper">Yeah, yeah</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">There just ain't one (There just ain't one)</div>
+    <div class="readerWrapper">There just ain't one (There just ain't one weapon no)</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Although they've sent a snare to trap you</div>
+    <div class="readerWrapper">I want you to know it won't work, ouu no, no, no</div>
+    <div class="readerWrapper">There just ain't one</div>
+    <div class="readerWrapper">There just ain't one weapon no</div>
+    <div class="readerWrapper">Yeah</div>    
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Fred Hammond nn Alvin Moore</div>
+    <div class="readerWrapper"></div>
+    
+    <div class="translationWrapper"></div>
+
+    <div class="controls">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="textSize">
+            <label for="textSizeInputRange" style="font-size: 10pt;">Change Text Size:</label>
+            <br>
+            <input type="range" id="textSizeInputRange" min="12" max="27" value="12" onchange="updateChangeText(this.value)" oninput="updateChangeText(this.value)">
+            <span id="textSizeInput">12</span> 
+            <!-- <input type="button" value="Apply" onclick="updateFontSize();"> -->
+        </div>
+    </div>
+</body>
+<script>
+    // Controls click events
+    document.querySelector('.dark').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/dark.css');
+    });
+    document.querySelector('.light').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/light.css');
+    });
+    document.querySelector('.leftJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'left';
+    });
+    document.querySelector('.centeredText').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'center';
+    });
+    document.querySelector('.rightJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'right';
+    });
+
+    function updateChangeText(textSizeVal){
+        document.getElementById('textSizeInput').innerHTML = textSizeVal;
+        alphabetScriptor.updateFontSize(textSizeVal);
+    }
+
+    // function updateFontSize(){
+    //     var newFontSize = document.getElementById('textSizeInput').innerHTML;
+    //     //
+    //     alphabetScriptor.updateFontSize(newFontSize);
+    // }
+
+    // Set Default text alignment and styles
+    //document.querySelector('.centeredText').click();
+    //document.querySelector('.dark').click();
+    alphabetScriptor.imageWidth = 12;
+    alphabetScriptor.fontType = 'default';
+</script>
+</html>

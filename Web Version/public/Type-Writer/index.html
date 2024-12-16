@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link id="theme" rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <script src="js/main.js"></script>
+    <script src="js/superUtilBase.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script>
+        var superUtil = new SuperUtil();
+        //
+        window.onkeydown = function(){
+            document.querySelector('.loading').style.display = 'none';
+            translator.detectTyping(event);
+        }
+    </script>
+    <style>
+        .navigation{
+            width: 100%;
+            border-bottom:1px solid white;
+            position: fixed;
+            background: black;
+            color: white;
+            padding:10px;
+            z-index: 1;
+        }
+    </style>
+    <title>Type Writer</title>
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>LEARN</li>
+            <li>EDITOR</li>
+            <li style="text-decoration: underline;">TYPE WRITER</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <input type="text" id="hiddenInput">
+    <div class="loading">Start Typing Text...</div>
+    <div class="translatedTextWrapper"></div>
+    <div class="importDialog">
+        <div class="inputWrapper">
+                <form action="/api/importFile" method="POST" enctype="multipart/form-data" class="importFileForm">
+                    <label for="chooseFile"><h2><b>Choose a file to import: <i>(.json file type)</i></b></h2></label>
+                    <br>
+                    <input type="file" id="importFileInput" accept=".json" name="importedFile">
+                    <p><button type="submit">Import File</button></p>
+                </form>
+                <p><button class="importDialogClose" onclick="closeModal(this);">Cancel (X)</button></p>
+        </div>
+    </div>
+    <!-- show/hide bottom controls menu bar-->
+    <div class="viewControls">Hide Control Bar</div>
+    <div class="controls">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="newPage">
+            <span>(+) Add</span>
+        </div>
+        <div class="removePage">
+            <span>(-) Remove</span>
+        </div>
+        <div class="savePage">
+            <span>Save</span>
+        </div>
+        <div class="exportButton">
+            <span>Export</span>
+        </div>
+        <div class="importButton">
+            <span>Import</span>
+        </div>
+        <div class="listedPages">
+            <ul></ul>
+        </div>
+    </div>
+</body>
+<script src="js/controls.js"></script>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow & Focus</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link id="theme" rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+    <script>
+        alphabetScriptor.pathEdit = '../';
+    </script>
+</head>
+<body>
+    <div class="loading">Rendering Text...</div>
+    <br>
+    <div class="readerWrapper">Flow and Focus</div>
+    <div class="readerWrapper">Flow is a state of mind that can be achieved with great concentration and focus</div>
+    <div class="readerWrapper">Flow state is the most productive state we can be in.</div>
+    <div class="readerWrapper">Removing two froms of distractions</div>
+    <div class="readerWrapper">One NN External Distractions</div>
+    <div class="readerWrapper">Social media, phone, notifications, and noise. These are external distractions</div>
+    <div class="readerWrapper">Two NN Internal Distractions</div>
+    <div class="readerWrapper">thoughts, emotions stress and mind racing. These are internal distractions</div>
+    <div class="readerWrapper">The point is to do meaningful deep work, without distractions.</div>
+
+    <div class="readerWrapper"></div>
+
+    <div class="readerWrapper">Identify the biggest external distractions that hijack you.</div>
+    <div class="readerWrapper">You must either remove these external distractions or remove yourself from these external distractions.</div>
+    <div class="readerWrapper">The harder it is to access distractions, the less likely youll get distracted.</div>
+    <div class="readerWrapper">If distractions are easily accessible, you will get distracted.</div>
+    <div class="readerWrapper">These external distractions are designed to get you hooked on them. They are unnatrually stimulating to the mind.</div>
+    <div class="readerWrapper">Your brain releases a lot of dopamine while engaged in these distractions which is why it is so difficult to resist their temptation</div>
+    <div class="readerWrapper">The mind is always looking for the easiest way to get stimulated the most.</div>
+    <div class="readerWrapper">Most of our daily tasks cannot beat the instant gratification that these distractions provide.</div>
+    <div class="readerWrapper">You must remove and deprive yourself of all distractions until your work is the only fun and stimulating thing to do.</div>
+    <div class="readerWrapper">When there are no distractions you create the space to enter flow state and do deep meaningful work.</div>
+
+    <div class="readerWrapper"></div>
+
+    <div class="readerWrapper">After removing external distractions, the mind is the only big source of distractions left.</div>
+    <div class="readerWrapper">You must learn how to calm your mind and limit the internal chatter.</div>
+    <div class="readerWrapper">Meditation is one of the most effective ways to remove the internal chatter and distractions</div>
+    <div class="readerWrapper">Read our passages and study about meditation</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">Monkey Mind</div>
+    <div class="readerWrapper">Monkey Mind is when your thoughts are swinging from branch to branch. You cannot focus on anything because you choose to indulge in every thought that entertains or stimulates you. Thus inhibiting your flow and focus</div>
+    <div class="readerWrapper">We can elliminate Monkey Mind with meditation.</div>
+    <div class="readerWrapper">Read and study about meditation techniques and realize the great benefit it has on the mind. Then, meditate</div>
+    <div class="readerWrapper">Another way we can elliminate Monkey Mind is by journaling our thoughts on paper. This allows us to see our thoughts as a whole and to be able to digest them without distraction.</div>
+    <div class="readerWrapper">Daily journaling helps a lot to capture thoughts, free up mental resources and it protects your mental energy.</div>
+
+    <div class="readerWrapper"></div>
+
+    <div class="readerWrapper">Your mind shouldnt be a storage unit for thoughts and ideas. Instead it should be a generator of high quality ideas.</div>
+    <div class="readerWrapper">Taming the monkey mind sharpens your focus allowing for deep work</div>
+   
+    <div class="readerWrapper"></div>
+
+    <div class="readerWrapper">Now Do it! Knowing how is not enough. We must put these thoughts and knowing into practice and action.</div>
+    <!-- <div class="readerWrapper">This is how you make blocks of text within a div item</div>
+    <div class="readerWrapper">
+        <img src="img/yinyang.png" alt="" style="width:25%">
+    </div>
+    <div class="readerWrapper">Be sure to group everything appropriately and to remove extra spaces at the beginning and end of divs.</div>
+    <div class="readerWrapper">For faster rendering, comment out blocks of text that you know you do not need or that are already completed. This way, you will spend less time rendering over something that has already been completed. It will load faster when you block out older chunks and gradgually build blocks together.</div>
+    <div class="readerWrapper">Remember to change the title of this page to match your printing document title</div>
+
+    <div class="readerWrapper">Thanks for writing!</div>
+    <div class="readerWrapper">Have fun!</div>
+    <div class="readerWrapper">With love!</div>
+    <div class="readerWrapper">NN  Chris  NN</div> -->
+
+    <div class="translationWrapper"></div>
+
+    <div class="controls">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+
+        <div class="textSize">
+            <label for="textSizeInputRange" style="font-size: 10pt;">Change Text Size:</label>
+            <br>
+            <input type="range" id="textSizeInputRange" min="12" max="27" value="17" onchange="updateChangeText(this.value)" oninput="updateChangeText(this.value)">
+            <span id="textSizeInput">17</span> 
+            <input type="button" value="Apply" onclick="updateFontSize();">
+        </div>
+    </div>
+</body>
+<script>
+    // Controls click events
+    document.querySelector('.dark').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/dark.css');
+    });
+    document.querySelector('.light').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/light.css');
+    });
+    document.querySelector('.leftJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'left';
+    });
+    document.querySelector('.centeredText').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'center';
+    });
+    document.querySelector('.rightJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'right';
+    });
+
+    function updateChangeText(textSizeVal){
+        document.getElementById('textSizeInput').innerHTML = textSizeVal;
+        //alphabetScriptor.updateFontSize(textSizeVal);
+    }
+
+    function updateFontSize(){
+        var newFontSize = document.getElementById('textSizeInput').innerHTML;
+        //
+        alphabetScriptor.updateFontSize(newFontSize);
+    }
+
+
+    // Set Default text alignment and styles
+    // document.querySelector('.centeredText').click();
+    // document.querySelector('.dark').click();
+    alphabetScriptor.imageWidth = 17;
+    alphabetScriptor.fontType = 'default';
+</script>
+</html>

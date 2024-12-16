@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tao Te Ching 32</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link id="theme" rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+    <script>
+        alphabetScriptor.pathEdit = '../';
+    </script>
+</head>
+<body>
+    <div class="loading">Rendering Text...</div>
+    <br>
+    <div class="readerWrapper">Tao Te Ching</div>
+    <div class="readerWrapper">NN Thirty Two NN</div>
+    <div class="readerWrapper">
+        <img src="../img/tao.png" style="width:25%" alt="">
+    </div>
+    <div class="readerWrapper">The Tao can't be perceived.</div>
+    <div class="readerWrapper">Smaller than an electron,</div>
+    <div class="readerWrapper">it contains uncountable galaxies.</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">If powerful men and women</div>
+    <div class="readerWrapper">could remain centered in the Tao,</div>
+    <div class="readerWrapper">The world would become a paradise.</div>
+    <div class="readerWrapper">All people would be at peace,</div>
+    <div class="readerWrapper">and the law would be written in their hearts.</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">When you have names and forms,</div>
+    <div class="readerWrapper">know that they are provisional.</div>
+    <div class="readerWrapper">When you have institutions,</div>
+    <div class="readerWrapper">know where their functions should end.</div>
+    <div class="readerWrapper">Knowing when to stop,</div>
+    <div class="readerWrapper">you can avoid any danger.</div>
+    <div class="readerWrapper"></div>
+    <div class="readerWrapper">All things end in the Tao</div>
+    <div class="readerWrapper">as rivers flow into the sea.</div>
+    
+    <div class="translationWrapper"></div>
+
+    <div class="controls" style="display:block;">
+        <div class="dark">Dark</div>
+        <div class="light">Light</div>
+        <div class="leftJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="centeredText">
+            <div>__</div>
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="rightJustified">
+            <div>_</div>
+            <div>__</div>
+            <div>__</div>
+            <div>__</div>
+        </div>
+        <div class="textSize">
+            <label for="textSizeInputRange" style="font-size: 10pt;">Change Text Size:</label>
+            <br>
+            <input type="range" id="textSizeInputRange" min="12" max="27" value="17" onchange="updateChangeText(this.value)" oninput="updateChangeText(this.value)">
+            <span id="textSizeInput">17</span> 
+            <!-- <input type="button" value="Apply" onclick="updateFontSize();"> -->
+        </div>
+    </div>
+</body>
+<script>
+    // Controls click events
+    document.querySelector('.dark').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/dark.css');
+    });
+    document.querySelector('.light').addEventListener('click', function (e){
+        document.getElementById('theme').setAttribute('href', '../css/light.css');
+    });
+    document.querySelector('.leftJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'left';
+    });
+    document.querySelector('.centeredText').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'center';
+    });
+    document.querySelector('.rightJustified').addEventListener('click', function (e){
+        document.querySelector('.translationWrapper').style.textAlign = 'right';
+    });
+    
+    function updateChangeText(textSizeVal){
+        document.getElementById('textSizeInput').innerHTML = textSizeVal;
+        alphabetScriptor.updateFontSize(textSizeVal);
+    }
+
+    // function updateFontSize(){
+    //     var newFontSize = document.getElementById('textSizeInput').innerHTML;
+    //     //
+    //     alphabetScriptor.updateFontSize(newFontSize);
+    // }
+
+    // Set Default text alignment and styles
+    document.querySelector('.centeredText').click();
+    // document.querySelector('.dark').click();
+    alphabetScriptor.imageWidth = 17;
+    alphabetScriptor.fontType = 'default';
+</script>
+</html>

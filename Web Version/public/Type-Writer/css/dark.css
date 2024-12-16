@@ -1,0 +1,42 @@
+body{
+    background:black;
+}
+.translatedTextWrapper{
+    background: black;
+}
+.translatedTextWrapper img{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+.leftJustified, .centeredText, .rightJustified{
+    color:white;
+}
+.loading{
+    background: white;
+    color:black;
+}
+.controls{
+    background:black;
+}
+
+.newPage{
+    color:white;
+}
+.savePage{
+    color:white;
+}
+.removePage{
+    color:white;
+}
+.exportButton, .importButton{
+    color:white;
+}
+
+.listedPages ul li{
+    color:white;
+}
+.listedPages ul li:hover{
+    text-decoration: underline;
+    background:white;
+    color:black;
+}

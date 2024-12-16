@@ -1,0 +1,7 @@
+.translationWrapper{
+    background: black;
+}
+.translationWrapper img{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}

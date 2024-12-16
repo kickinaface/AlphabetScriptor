@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* body{
+    font-size: 0pt;
+} */
+.readerWrapper{
+    display: none;
+}
+.textImage{
+    padding-bottom: 7px;
+}
+.translationWrapper{
+    padding:20px;
+    text-align: left;/* text-align: right; */
+}
+.translationWrapper img{
+    padding-bottom: 7px;
+}
+
+.loading{
+    margin-top:0px 10px 0px 10px;
+    background: black;
+    position: fixed;
+    color:white;
+    width:100%;
+    text-align: center;
+    padding:5px 0px 5px 0px;
+    z-index: 1;
+    font-weight: bold;
+}
+.controls{
+    position: fixed;
+    bottom:0;
+}
+.dark{
+    color:white;
+    background: black;
+    float: left;
+    padding:10px;
+    cursor: pointer;
+}
+.light{
+    color:black;
+    background:white;
+    float: left;
+    padding:10px;
+    cursor: pointer;
+}
+.leftJustified{
+    float:left;
+    cursor: pointer;
+    width:40px;
+    padding-right:3px;
+    margin-top:-4px;
+    margin-left:10px;
+}
+.leftJustified div{
+    font-size:20pt;
+    font-weight: bold;
+    line-height: 5px;
+}
+.centeredText{
+    float: left;
+    cursor: pointer;
+    width: 40px;
+    padding-right:3px;
+    margin-top:-4px;
+}
+.centeredText div{
+    font-size:20pt;
+    font-weight: bold;
+    line-height: 5px;
+    text-align: center;
+}
+.rightJustified{
+    float: left;
+    cursor: pointer;
+    width: 40px;
+    padding-right:3px;
+    margin-top:-4px;
+}
+.rightJustified div{
+    font-size:20pt;
+    font-weight: bold;
+    line-height: 5px;
+    text-align: right;
+}
+.controls{
+    background:white;
+    font-weight: bold;
+}
+.stopControl{
+    float: left;
+    cursor: pointer;
+    width: 40px;
+    padding-right:3px;
+    margin-top:-4px;
+}
+
+.textSize{
+    float: left;
+    margin-left:10px;
+    padding-bottom: 3px;
+}

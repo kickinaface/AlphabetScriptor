@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet-Scriptor </title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: white;
+        }
+        .readerWrapper{
+            display: none;
+        }
+        .textImage{
+            padding-bottom: 7px;
+        }
+        .translationWrapper{
+            padding:20px;
+            text-align: left;/* text-align: right; */
+            background:black;
+        }
+        .translationWrapper img{
+            padding-bottom: 7px;
+            -webkit-filter: invert(1);
+            filter: invert(1);
+        }
+
+        .loading{
+            margin-top:0px 10px 0px 10px;
+            background: black;
+            position: fixed;
+            color:white;
+            width:100%;
+            text-align: center;
+            padding:5px 0px 5px 0px;
+        }
+    </style>
+    <script src="../../js/main.js"></script>
+</head>
+<body>
+    <div class="loading">Rendering Text...</div>
+    <div class="readerWrapper">NN  Dantian  NN</div>
+
+    <div class="translationWrapper editorText"></div>
+</body>
+</html>
+<!-- <script>
+    var editorText = document.querySelector('.editorText');
+    document.addEventListener('DOMContentLoaded', function (e){
+        document.addEventListener("click", function (e){
+            console.log(e.target);
+            window.location = '../Editor/index.html'
+        });
+    });
+    
+</script> -->
