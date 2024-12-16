@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/moment-min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/typeWriter.js"></script>
+    <title>Alphabet Scriptor</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <ul>
+          <li>HOME</li>
+          <li>LEARN</li>
+          <li>LIST</li>
+          <li>TYPE WRITER</li>
+          <li>RESET</li>
+      </ul>
+    </div>
+    
+    <!-- Dialog modals popup content-->
+     <!-- please wait dialog-->
+    <div class="modal pleaseWaitDialogWrapper">
+      <div class="inputWrapper">
+        <!-- <br>
+        <h1 style="font-family: Arial, Helvetica, sans-serif;">Add a Text Block</h1>
+        <h3 style="font-family: Arial, Helvetica, sans-serif;">Insert text into the text area to create a new text block.</h3>
+          <textarea name="newBlockTextEntry" id="newBlockTextEntry" onkeydown="auto_grow(this)"></textarea>
+          <p><button class="createBlockBtn" onclick="editor.createNewTextBlock(this);">Create</button></p>
+          <p><button class="closeModalBtn" onclick="closeModal(this);">Cancel (X)</button></p>
+          <div class="modalMessages"></div> -->
+      </div>
+  </div>
+    <div class="modal addTextBlockWrapper">
+        <div class="inputWrapper">
+          <br>
+          <h1 style="font-family: Arial, Helvetica, sans-serif;">Add a Text Block</h1>
+          <h3 style="font-family: Arial, Helvetica, sans-serif;">Insert a title into the text area to create a new text block.</h3>
+            <textarea name="newBlockTextEntry" id="newBlockTextEntry" onkeydown="auto_grow(this)"></textarea>
+            <p><button class="createBlockBtn" onclick="editor.createNewTextBlock(this);">Create</button></p>
+            <p><button class="closeModalBtn" onclick="closeModal(this);">Cancel (X)</button></p>
+            <div class="modalMessages"></div>
+        </div>
+    </div>
+    <div class="modal importListWorkspace">
+      <div class="inputWrapper">
+        <br>
+        <h1 style="font-family: Arial, Helvetica, sans-serif;">Import a List Workspace</h1>
+        <h3 style="font-family: Arial, Helvetica, sans-serif;">Select a file to import.</h3>
+        <label for="chooseFile"><h2><b>Choose a file to import: <i>(.json file type)</i></b></h2></label>
+        <br>
+        <input type="file" id="importListFileForm" accept=".json" name="importedListFile">
+        <p><button class="closeModalBtn" onclick="closeModal(this);">Cancel (X)</button></p>
+          <div class="modalMessages"></div>
+      </div>
+  </div>
+
+    <div class="modal editTextBlockWrapper">
+      <div class="inputWrapper">
+        <br>
+        <h1 style="font-family: Arial, Helvetica, sans-serif;">Edit This Text Block</h1>
+        <h3 style="font-family: Arial, Helvetica, sans-serif;">Edit text into the text area to change the text block.</h3>
+        <br>  
+        <p><b>Enter Title:</b></p>
+          <textarea name="editBlockTextEntry" id="editBlockTextEntry" onkeydown="auto_grow(this)" placeholder="Title"></textarea>
+          <br>
+          <br>
+          <p><b>Enter Main Content:</b></p>
+          <textarea name="editBlockTextEntryContent" id="editBlockTextEntryContent" onkeydown="auto_grow(this)" placeholder="Content" style="min-height:300px;"></textarea>
+          
+          <p>
+            <h3>Select a font style.</h3>
+            <select name="font" id="fontDropDown">
+              <option value="traditional">Traditional</option>
+              <option value="default">Block/Print default</option>
+            </select>
+          </p>
+          <p>
+            <h3>Set the font size</h3>
+            <input type="text" id="setFontSize" value="0">
+          </p>
+          <input type="hidden" id="storedBlockId">
+          <p><button class="updateBlockBtn" onclick="editor.updateBlockTextEntry(this);">Save</button></p>
+          <p><button class="deleteBlockBtn" onclick="editor.deleteBlockTextEntry(this);">Delete</button></p>
+          <p><button class="sendToTWBtn" onclick="editor.sendToTypeWriter(this);">Send to Type Writer</button></p>
+          <p><button class="closeModalBtn" onclick="closeModal(this);">Close (X)</button></p>
+          <div class="modalMessages"></div>
+      </div>
+  </div>
+  <!-- Import dialog -->
+  <div class="modal importTextBlockWrapper">
+    <div class="inputWrapper">
+      <br>
+      <h1 style="font-family: Arial, Helvetica, sans-serif;">Import a file.</h1>
+      <h3 style="font-family: Arial, Helvetica, sans-serif;">Select a file to import.</h3>
+        <label for="chooseFile"><h2><b>Choose a file to import: <i>(.json file type)</i></b></h2></label>
+        <br>
+        <input type="file" id="importFileForm" accept=".json" name="importedFile">
+        <p><button class="closeModalBtn" onclick="closeModal(this);">Cancel (X)</button></p>
+        <div class="modalMessages"></div>
+    </div>
+  </div>
+  <!-- Type writer font setting modal -->
+  <div class="modal changeTypeWriterFont">
+    <div class="inputWrapper">
+      <br>
+      <h1 style="font-family: Arial, Helvetica, sans-serif;">Change Font.</h1>
+      <h3 style="font-family: Arial, Helvetica, sans-serif;">Select a font to use.</h3>
+        <br>
+        <select value="traditional" id="fontSelection">
+          <!-- <option value="null">Please Select</option> -->
+          <option value="traditional">Traditional</option>
+          <option value="default">Block/Print Default</option>
+        </select>
+        <p><button class="updateFontButton" onclick="typeWriter.updateFont(this);">Update</button></p>
+        <p><button class="closeModalBtn" onclick="closeModal(this);">Cancel (X)</button></p>
+        <div class="modalMessages"></div>
+    </div>
+  </div>
+  <!-- Type writer font size modal-->
+  <div class="modal changeTypeWriterFontSize">
+    <div class="inputWrapper">
+      <br>
+      <h1 style="font-family: Arial, Helvetica, sans-serif;">Change Font Size.</h1>
+      <h3 style="font-family: Arial, Helvetica, sans-serif;">Insert a number.</h3>
+        <br>
+        <input type="text" value="37" id="fontSizeValue">
+        <p><button class="updateFontSizeButton" onclick="typeWriter.updateFontSize(this);">Update</button></p>
+        <p><button class="closeModalBtn" onclick="closeModal(this);">Cancel (X)</button></p>
+        <div class="modalMessages"></div>
+    </div>
+  </div>
+    <!-- Page content-->
+    <div class="myContent">
+      <div class="loading">Please wait... Loading content</div>
+      <div class="contentGroup homePage">
+        <img src="images/Machikaba.png" alt="Machikaba" width="250px" style="float: left; margin-right:20px;">
+        <h1 style="padding: 0px 10px 10px 10px; font-family: Arial, Helvetica, sans-serif;">Welcome to Alphabet Scriptor</h1>
+        <h3 style="padding: 0px 0px 0px 10px;">Desktop Program <span onclick="navigation.showReleaseNotes();">v1.5.3</span></h3>
+        <br>
+        <div class="instructional">
+            <span>Use the navigation bar link buttons at the top to access different parts of this program. </span>
+            <br><br>
+            <p>
+              <span>Click: <b>LEARN</b> to learn how to read and write in the script. Also access the instructional documentation to learn how to use this program.</span>
+            </p>
+            <br>
+            <p>
+              <span>Click: <b>LIST</b> to create blocks of text and render them on the screen.</span>
+            </p>
+            <br>
+            <p>
+              <span>Click: <b>TYPE WRITER</b> to type out text directly on the screen in the script. Import and export your workspace.</span>
+            </p>
+            <br>
+            <p>
+              Thanks for using Alphabet Scriptor! ❤️<i style="font-size: 11pt;">-Christopher Carter</i>
+              <br><br><br>
+              <center>
+                <img src="images/ASxcf.png" alt="Alphabet Scriptor" width="30%" style="border: 1px solid white; border-radius: 20px;">
+                <img src="images/mainIcon.png" alt="Alphabet Scriptor" width="30%" style="border: 1px solid white; border-radius: 20px;">
+              </center>
+            </p>
+        </div>
+      </div>
+      <div class="contentGroup learnPage">
+        <div class="learningNavigation">
+          <ul class="navList">
+            <li><h3 onclick="scrollToContent('#nav1', this);">Alphabet</h3>
+                 <ul style="margin-left:20px;">
+                     <li><h4 onclick="scrollToContent('#nav2', this);">Font Formats:</h4>
+                        <ul style="margin-left:20px;">
+                            <li onclick="scrollToContent('#nav3', this);">Traditional</li>
+                            <li onclick="scrollToContent('#nav4', this);">Default</li>
+                        </ul>
+                    </li>
+                 </ul>
+            </li>
+            <br>
+            <li><h3 onclick="scrollToContent('#nav5', this);">Memorization</h3>
+                 <!-- <ul style="margin-left:20px;">
+                     <li><h4>Download .zip file</h4></li>
+                 </ul> -->
+            </li>
+            <br>
+            <!-- <li><h3>Application Setup</h3>
+                <ul style="margin-left:20px;">
+                    <li><h4>Run the App</h4></li>
+                </ul>
+            </li> 
+            <br> -->
+            <li><h3 onclick="scrollToContent('#nav6', this);">How To: List</h3>
+                <ul style="margin-left:20px;">
+                    <li onclick="scrollToContent('#nav7', this);"><h4>Add & Edit</h4></li>
+                    <li onclick="scrollToContent('#nav7b',this);"><h4>Delete & Refocus</h4></li>
+                    <li onclick="scrollToContent('#nav7c',this);"><h4>Import/Export</h4></li>
+                    <li onclick="scrollToContent('#nav7d',this);"><h4>Send to Type Writer</h4></li>
+                    <!-- <li><h4>Editor's Features</h4>
+                        <ul style="margin-left:20px;">
+                            <li>Reading Modes</li>
+                            <li>Text Alignment</li>
+                            <li>Text Size</li>
+                            <li>Font Formats</li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </li>
+            <br>
+            <li><h3 onclick="scrollToContent('#nav8', this);">How To: Type Writer</h3>
+                <ul style="margin-left:20px;">
+                    <li><h4 onclick="scrollToContent('#nav9', this);">Add Creative Text</h4>
+                        <ul style="margin-left:20px;">
+                            <li onclick="scrollToContent('#nav10', this);">Select & Delete Characters</li>
+                            <li onclick="scrollToContent('#nav11', this);">Font Size</li>
+                            <li onclick="scrollToContent('#nav12', this);">Font Type</li>
+                            <li onclick="scrollToContent('#nav13', this);">Export Workspace</li>
+                            <li onclick="scrollToContent('#nav14', this);">Import Workspace</li>
+                            <li onclick="scrollToContent('#nav15', this);">New Workspace</li>
+                        </ul>
+                    </li>
+                    <li><h4 onclick="scrollToContent('#selectFeatureGroup', this);">Edit Multiple Characters</h4>
+                      <ul style="margin-left:20px;">
+                        <li onclick="scrollToContent('#selectChangeFont', this);">Change Font Size</li>
+                        <li onclick="scrollToContent('#selectChangeFontSize', this);">Change Font</li>
+                        <li onclick="scrollToContent('#selectedDeselect', this);">Deselect</li>
+                      </ul>
+                    </li>
+                    <li><h4 onclick="scrollToContent('#resetTypeWriter', this);">Reset Type Writer</h4></li>
+                </ul>
+            </li>
+            <br>
+            <li><h3>Thank You!</h3>
+                <ul style="margin-left:20px;">
+                    <li><h4>More coming updates!</h4></li>
+                </ul>
+            </li>
+         </ul>
+        </div>
+        <div class="isolatedContent">
+          <h1 style="padding: 0px 10px 10px 10px; font-family: Arial, Helvetica, sans-serif;">Learning:</h1>
+          <h3 style="padding: 0px 0px 0px 10px; font-family: Arial, Helvetica, sans-serif;">Learn how to use Alphabet Scriptor and the script</h3>
+          <br>
+          <div class="instructional">
+            <div id="nav1"><h2>Alphabet:</h2></div>
+            <img class="alphabetImage" src="images/alphabet.png" alt="Alphabet" />
+            <br>
+            <br>
+            <p>
+              <div id="nav2"><h2>Font Formats:</h2></div>
+              <span>There are two formats of the script.</span>
+              <br>
+              <br>
+              <div id="nav3"><h3>Traditional:</h3></div>
+              <p>
+                <img src="images/traditional-1.png" alt="Traditional script">
+                <br>
+                *A line format that is the first creation of this alphabet. This adaptation produces an effect that allows the learner to engage deeply with their intentions.
+              </p>
+              <br>
+              <div id="nav4"><h3>Print/Block Default:</h3></div>
+              <p>
+                <img src="images/block-print-1.png" alt="Block Script">
+                <br>
+                *A block print format that removes the line and renders the alphabet characters only. This method is quick powerful and the first to be programmed.
+              </p>
+            </p>
+            <br>
+            <br>
+            <p>
+              <div id="nav5"><h2>Memorization:</h2></div>
+              *The picture in the top heading title above is the alphabet of this script and should be learned and memorized just as the learner understands the current alphabet.
+              <br>
+              This is to ensure the content is absorbed into the sub-conscious mind.
+              <br>
+              The ability to both read and write in this script or any script is imparitive before proceeding to computational typing or automated tools.
+              <br>
+              The traditional way of learning is the best way. In this particular case it is in alignment with previous writing styles that have already been acquired.
+              <br>
+              Once you are able to learn the script and read and write with it without reference material, you are ready to express with it and truly embrace this tool as well.
+            </p>
+            <br><br>
+            <p>
+              <div id="nav6"><h2>How to use: <u>List</u></h2></div>
+              <br>
+              <div id="nav7"><h4><i>Add & Edit a Text Block:</i></h4></div>
+              <br>
+              -Click the: ADD button to bring up the modal.
+              <br>
+              <br>
+              <img src="images/learn/addBlock.png" alt="Add Button" class="learnImage">
+              <br>
+              <br>
+              -Insert your desired text into the dialog's input field.
+              <br>
+              <br>
+              <img src="images//learn/textBlockModal.png" alt="Insert text in modal" class="learnImage">
+              <br>
+              <br>
+              -The new text block is shown.
+              <br>
+              <br>
+              <img src="images/learn/newTextBlockShown.png" alt="New Text block" class="learnImage">
+              <br>
+              <br>
+              -Click on the text block to edit the way the text is displayed.
+              <br>
+              <br>
+              <img src="images/learn/editTextBlock.png" alt="Edit Text Block" class="learnImage">
+              <br>
+              <br>
+              -You can change the font style and the font size. Press Update when you are done.
+              <br>
+              <br>
+              <div id="nav7b"><h4><i>Delete Text Block:</i></h4></div>
+              <br>
+              Press the Delete button to remove the text block. <br>!!PLEASE NOTE!! If you're having issues refocusing, click off the window and refocus back on the application after deleting a text block.
+              This allows the input fields to work again. (Mostly observed on Windows but rare minor cases.)
+              <br>
+              <br>
+              <div id="nav7c"><h4><i>Import & Export:</i></h4></div>
+              <br>
+              Click: <b>Import</b> to load in the data of a saved list workspace.
+              <br>
+              Click: <b>Export</b> to send your list workspace to a file in your home downloads folder.
+              **The file names are different per workspace program. Be sure to import the correct workspace file.
+              <br>
+              <br>
+              <div id="nav7d"><h4><i>Send to Type Writer:</i></h4></div>
+              <br>
+              Click: <b>Send to Type Writer</b> to send your content over to the Type Writer program. You can use this in various ways to build creative workflow styles.
+            </p>
+            <br><br>
+            <p>
+              <div id="nav8"><h2>How to use: <u>Type Writer</u></h2></div>
+              <br>
+              <div id="nav9"><h4><i>Add Creative Text with Type Writer:</i></h4></div>
+              <br>
+              Type Writer is a program that can also be used to generate creative text. 
+              Alphabet Scriptor automatically saves your work so you don't have to worry about losing progress. 
+              Create unique writings that allow you to customize from another perspective.
+              <br>
+              <br>
+              <img src="images/learn/typeText.png" alt="Enter Text" class="learnImage">
+              <br>
+              <br>
+              <div id="nav10"><h4><i>Select Individual Characters:</i></h4></div>
+              <br>
+              -Click on each character or space and the cursor will blink indicating that your selected character is focused.
+              <br>
+              -From here, you can begin typing over the selected area.
+              <br>
+              -To delete a character or space, right click on it.
+              <br>
+              <br>
+              <img src="images/learn/cursor.png" alt="Cursor" class="learnImage">
+              <br>
+              <br>
+              <div id="nav11"><h4><i>Change Font Size:</i></h4></div>
+              <br>
+              -Click on the: Font Size button.
+              <br>
+              <br>
+              <img src="images/learn/fontSizeButton.png" alt="Font size button" class="learnImage">
+              <br>
+              <br>
+              -It will bring up a dialog showing where to input your numeric value for the font size.
+              <br>
+              <br>
+              <img src="images/learn/changeFontSizeModal.png" alt="Change font size" class="learnImage">
+              <br>
+              <br>
+              Press the: Update button and the new font size will be set. Begin typing in order to see the new font size set.
+              <br>
+              <br>
+              <img src="images/learn/newFontSize.png" alt="New font set" class="learnImage">
+              <br>
+              <br>
+              <div id="nav12"><h4><i>Change Font Type:</i></h4></div>
+              <br>
+              -Click on the: Font button.
+              <br>
+              <br>
+              <img src="images/learn/fontButton.png" alt="Change Font button" class="learnImage">
+              <br>
+              <br>
+              -It will bring up a dialog showing where to select either: Traditional or Block font type.
+              <br>
+              <br>
+              <img src="images/learn/changeFontDialog.png" alt="Change font dialog." class="learnImage">
+              <br>
+              <br>
+              -Press the: Update button and the new font will be set. Begin typing in order to see the new font size set.
+              <br>
+              <br>
+              <img src="images/learn/changeFontResult.png" alt="Changed Font" class="learnImage">
+              <br>
+              <br>
+              <div id="nav13"><h4><i>Export Workspace:</i></h4></div>
+              <br>
+              -Click on the: Export button.
+              <br>
+              <br>
+              <img src="images/learn/exportButton.png" alt="Export Button" class="learnImage">
+              <br>
+              <br>
+              -A popup message will appear, indicating that the workspace was exported to the download folder in the user's home directory.
+              <br>
+              <br>
+              <img src="images/learn/exportedSuccess.png" alt="Export success" class="learnImage">
+              <br>
+              <br>
+              <div id="nav14"><h4><i>Import Workspace:</i></h4></div>
+              <br>
+              -Click on the: Import button.
+              <br>
+              <br>
+              <img src="images/learn/importButton.png" alt="Import Workspace button" class="learnImage">
+              <br>
+              <br>
+              -It will bring up a dialog where you can browse and select the previously exported workspace. Select the file and the workspace is loaded in.
+              <br>
+              <br>
+              <img src="images/learn/importWorkspace.png" alt="Import workspace" class="learnImage">
+              <br>
+              -After imported, press the: Esc key to enable typing again on the imported document.
+              <br>
+              <br>
+              <div id="nav15"><h4><i>New Workspace:</i></h4></div>
+              <br>
+              -Click on the: New button to create a new workspace. It will clear out the content on your current workspace. Just start typing again to see the text.
+              <br>
+              <br>
+              <img src="images/learn/newButton.png" alt="New Workspace" class="learnImage">
+              <br>
+              <br>
+              <div id="selectFeatureGroup"><h4><i>Edit Multiple Characters:</i></h4></div>
+              <br>
+              You can edit multple characters simultaneously with the Select button.
+              <br>
+              <br>
+              -First, click on the first character of the start of your selection. Then press the SELECT button.
+              <br>
+              <img src="images/learn/selectImage-1.png" alt="Select Cursor">
+              <br>
+              -You will notice the cursor now blinks in highlight colors. Also, the Select button has changed color indicating the selection tool is active.
+              <br>
+              <img src="images/learn/selectImage-2.png" alt="Active Select Button">
+              <br>
+              -Select the last character of the combined selection text. When you do, the selected combined text is highlighted. This means that those combined characters are selected to be modified together.
+              <br>
+              <img src="images/learn/selectImage-3.png" alt="Selected Text">
+              <br>
+              <div id="selectChangeFont">-Now that your text is selected, you can change the font size using the same button for single character edits.</div>
+              <br>
+              <img src="images/learn/selectImage-4.png" alt="Enlarged Font">
+              <br>
+              <div id="selectChangeFontSize">-You can also change the font itself using the same method.</div>
+              <br>
+              <img src="images/learn/selectImage-6.png" alt="Change Font">
+              <br>
+              <div id="selectedDeselect">-Press the: DESELECT button to remove the highlighted combined selected text.</div>
+              <br>
+              <img src="images/learn/selectImage-5.png" alt="Deselect Button Active">
+              <br>
+              **Note! Selected text remains until you press: DESELECT. Also, you may use the selection tool multiple times if you need to edit multiple combined text.
+              <br>
+              <img src="images/learn/selectImage-7.png" alt="Finished Edited Text">
+              <br>
+              <br>
+              <div id="resetTypeWriter"><h4><i>Reset Type Writer:</i></h4></div>
+              <br>
+              -Sometimes while using the Type Writer for long periods of time and when the document page is very long, the Type Writer will need to be reset to regain speed and memory usage.
+              <br>
+              -You can either separate your pages so that it is less processor intensive, or you can SAVE and then press: RESET. This will clear out the previous memory and start the program over where you left off.
+              <br>
+              -Any time you feel the app is slow while using Type Writer, save and press reset and that should speed it up.
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </p>
+          </div>
+        </div>
+        
+      </div>
+      <div class="contentGroup editorPage">
+        <div class="collapseListTitle">
+          <h1 style="padding: 0px 10px 10px 10px; font-family: Arial, Helvetica, sans-serif;">List:</h1>
+          <h3 style="padding: 0px 0px 0px 10px; font-family: Arial, Helvetica, sans-serif;">Create and edit blocks of text to be rendered and displayed in the script.</h3>
+        </div>
+        <button class="appButton listTitleToggleBtn" style="position: absolute; margin: 6px; width:30px">-</button>
+        <br>
+        <br>
+        <div class="editorWrapper instructional">
+          <button class="addTextBlockBtn">ADD</button>
+          <button class="importTextBlockBtn">IMPORT</button>
+          <button class="exportTextBtn">EXPORT</button>
+          <br>
+          <br>
+          <span class="noTextBlocksMessage"><i>There are no text blocks here. Click the Add+ button to create a text block.</i></span>
+          <div class="textBlockWrapper"></div>
+          
+        </div>
+      </div>
+      <div class="contentGroup typeWriterPage">
+        <div class="collapseTitle">
+          <h1 style="padding: 0px 10px 10px 10px; font-family: Arial, Helvetica, sans-serif;">Type Writer:</h1>
+          <h3 style="padding: 0px 0px 0px 10px; font-family: Arial, Helvetica, sans-serif;">Start typing on the keyboard to quickly jot down text.</h3>
+        </div>
+        <button class="appButton toggleTitleBtnControl" style="position: absolute; margin: 6px; width:30px">-</button>
+        <br>
+        <br>
+        <!-- <div class="editorWrapper instructional">
+          <button class="importTextBlockBtn">IMPORT</button>
+          <button class="exportTextBtn">EXPORT</button>          
+        </div> -->
+        <div class="typeWriterContentWrapper">
+          <div class="translatedTextWrapper"></div>
+          
+        </div>
+        <div class="bottomControlBarSpacer"></div>
+        <div class="controlBar">
+          <img id="saveIcon" src="images/saveIcon.png">
+          <!-- <button class="appButton appButtonNew">NEW</button>
+          <button class="appButton appButtonImport">IMPORT</button>
+          <button class="appButton appButtonExport">EXPORT</button>
+          <button class="appButton appButtonFont">FONT</button>
+          <button class="appButton appButtonFontSize">FONT SIZE</button>
+          <button class="appButton appButtonSave">SAVE</button>
+          <button class="appButton appButtonSelect">SELECT</button>
+          <button class="appButton appButtonDeselect">DE-SELECT</button> -->
+
+          <button class="appButton appButtonDeselect">DE-SELECT</button>
+          <button class="appButton appButtonSelect">SELECT</button>
+          <button class="appButton appButtonFontSize">FONT SIZE</button>
+          <button class="appButton appButtonFont">FONT</button>
+          <button class="appButton appButtonExport">EXPORT</button>
+          <button class="appButton appButtonImport">IMPORT</button>
+          <button class="appButton appButtonSave">SAVE</button>
+          <button class="appButton appButtonNew">NEW</button>
+          
+          <!-- <div class="listedPages">
+              <ul>
+                <li><button class="appButton">Page:<span>1</span></button></li>
+              </ul>
+          </div> -->
+        </div>
+      </div>
+      <div class="contentGroup releaseNotesPage">
+        <h1>Desktop Version 1.5.3 Release Notes:</h1>
+        <br>
+        <h3>Updates:</h3>
+        <ul>
+          <li>-Delete multiple characters on selection.</li>
+          <li>-Added collapse title button for Type Writer & List.</li>
+          <li>-Added Import and Export for List workspaces.</li>
+          <li>-Added "Send to Type Writer" feature in List program. (Send the title and main content of your text blocks to the Type Writer program.)</li>
+        </ul>
+        <br>
+
+        <h1>Desktop Version 1.5.2 (patch) Release Notes:</h1>
+        <br>
+        <h3>Updates:</h3>
+        <ul>
+          <li>-Removed script name throughout the application. (There are many names to the script, contact author for more.)</li>
+          <li>-Changed Editor Tab name to List (The previous name doesn't really describe the proper functional action of the UI).</li>
+        </ul>
+        <br>
+
+        <h1>Desktop Version 1.5.1 Release Notes:</h1>
+        <br>
+        <h3>Updates:</h3>
+        <ul>
+          <li>-Added Reset button for Type Writer.</li>
+          <li>-Bug fixes.</li>
+          <li>-Added timestamp to exported documents.</li>
+          <li>-Updated Learn page.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- <p>👋</p>
+    <p id="info"></p>
+    <button id="saveBtn">Click to save JSON</button>
+    <button id="getBtn">Click to get saved JSON</button>
+  
+  <script src="./SiteControllers/renderer.js"></script>
+  <script src="./SiteControllers/readWriteData.js"></script> -->
+</body>
+
+</html>

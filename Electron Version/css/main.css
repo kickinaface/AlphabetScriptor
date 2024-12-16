@@ -1,0 +1,281 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+}
+.navigation{
+    width: 100%;
+    border-bottom:1px solid rgba(255, 255, 255, 0.4);
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding:15px 10px 10px 10px;
+    z-index: 2;
+    box-shadow: 0px 5px 10px rgba(255, 255, 255, .2);
+}
+.navigation ul{
+    list-style: none;
+}
+.navigation ul li{
+    float: left;
+    padding-right: 20px;
+    padding-left:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    border:1px solid white;
+    border-radius: 3px;
+    margin-right:15px;
+    background: black;
+    color: white;
+}
+.navigation ul li:hover{
+    /* text-decoration: underline !important; */
+    font-weight: bold !important;
+    cursor: pointer;
+    background-color: white !important;
+    color:black !important;
+}
+.myContent{
+    position: relative;
+    display: block;
+    color:white;
+    z-index: 1;
+    top: 65px;
+    padding: 0px 10px 10px 10px;
+    font-size: 16pt;
+}
+.instructional{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+}
+
+.loading{
+    font-size: 11pt;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top:5px;
+}
+
+.alphabetImage{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.addTextBlockBtn, .importTextBlockBtn, .exportTextBtn, .appButton{
+    padding: 10px;
+    background-color: black;
+    border: 1px solid white;
+    color:white;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 3px;
+}
+
+.addTextBlockBtn:hover, .importTextBlockBtn:hover, .exportTextBtn:hover, .appButton:hover{
+    background-color: white;
+    border:1px solid black;
+    color:black;
+}
+
+.modal{
+    position: fixed;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background:rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    display: none;
+    overflow-y: auto;
+}
+
+    .modal textarea{
+        font-family: Garamond;
+        font-size: 18pt;
+        width: 90%; 
+        resize: none;
+        overflow: hidden;
+        margin-top: 20px;
+        min-height: 150px;
+        max-height: 100%;
+    }
+    .modalMessages{
+        padding-bottom: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+.inputWrapper{
+    margin: 0 auto;
+    margin-top:5%;
+    width: 80%;
+    background: white;
+    text-align:center;
+    border-radius: 3px;
+}
+
+.inputWrapper button {
+    background: black;
+    color:white;
+    outline: none;
+    border:none;
+    margin:10px;
+    padding:10px;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 3px;
+}
+
+.contentWrapper {
+    white-space: initial;
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    cursor: pointer;
+    padding: 20px;
+}
+
+.contentWrapper:hover{
+    background:white;
+    -webkit-filter: invert(0);
+    filter: invert(0);
+    border-radius: 3px;
+}
+
+.homePage, .learnPage, .editorPage, .typeWriterPage{
+    display: none;
+}
+
+/* Type writer styles*/
+.typeWriterContentWrapper{
+    padding: 20px;
+}
+.translatedTextWrapper img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+.typedNewLine{
+    width: 100%;
+    height: 9px;
+}
+
+.trackedChar{
+    cursor: pointer;
+}
+
+.trackedChar:hover{
+    background: white !important;
+    -webkit-filter: invert(0) !important;
+    filter: invert(0) !important;
+}
+
+.controlBar{
+    width: 100%;
+    height: 40px;
+    border-top:1px solid rgba(255, 255, 255, 0.4);
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding:15px 10px 10px 10px;
+    z-index: 2;
+    box-shadow: 4px -5px 10px rgba(255, 255, 255, .2);
+    left:-5px;
+    bottom:0;
+}
+.listedPages {
+    float: left;
+}
+.listedPages ul {
+    list-style: none;
+}
+
+.listedPages ul li  {
+    float: left;
+}
+
+.bottomControlBarSpacer{
+    height: 100px;
+}
+
+#saveIcon{
+    float: left;
+    margin-right:5px;
+    margin-bottom:10px;
+    display: none;
+    width: 35px;
+}
+.appButton{
+    float: right;
+    margin-right:20px;
+}
+
+.learnImage{
+    border:1px solid white;
+    border-radius: 10px;
+}
+
+.learningNavigation{
+    width: 200px;
+    background:black;
+    left:0;
+    position: fixed;
+    /* border-right:1px solid white; */
+    font-size: 14pt;
+    padding-left: 40px;
+    padding-right:10px;
+}
+.learningNavigation ul li{
+    /* padding: 1px; */
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.navList h3:hover, .navList ul li ul li:hover, .navList h4:hover{
+    /* text-decoration: underline; */
+    cursor: pointer;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: white;
+    color:black;
+    font-weight: bold;
+}
+.isolatedContent{
+    margin-left: 250px;
+}
+
+.homePage h3 span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.learnNavBtnSelected{
+    background-color: greenyellow;
+    font-weight: bold;
+    padding-right: 7px;
+    padding-left: 7px;
+    color:black;
+    border-radius: 3px;
+}
+
+.isSelected{
+    border-color: greenyellow;
+    color:greenyellow;
+    background-color: purple;
+}
+
+.selectedText{
+    -webkit-filter: invert(0) !important;
+    filter: invert(0);
+    border-top: 5px solid purple !important;
+    border-bottom: 5px solid purple !important;
+    color:greenyellow !important;
+    background-color: greenyellow !important;
+}
+
+.pleaseWaitDialogWrapper{
+    opacity: .2;
+}
